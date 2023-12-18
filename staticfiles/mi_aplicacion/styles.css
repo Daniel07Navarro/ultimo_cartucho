@@ -1,0 +1,41 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #34495E;
+    color: #ffffff; /* Color del texto */
+}
+
+.menu {
+    background-color: #2C3E50; /* Color más oscuro */
+    overflow: hidden;
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.menu li {
+    float: left;
+}
+
+.menu a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    background-color: #1F2C38; /* Color más oscuro al pasar el ratón */
+}
+
+.content {
+    padding: 20px;
+}
+
+/* Otros estilos según sea necesario */

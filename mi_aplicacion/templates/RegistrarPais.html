@@ -1,0 +1,97 @@
+<!-- templates/listado_pais.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+        background-color: #f5f5f5;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 400px;
+    }
+
+    h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+    table {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    tr {
+        margin-bottom: 10px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+    }
+
+    button {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+</style>
+
+</head>
+<body>
+
+<form action="/registrarPais/" method="POST" class="form-container">
+    {% csrf_token %}
+    <h2 class="form-title">Ingresar Nuevo Curso</h2>
+
+    <table class="form-table">
+        <tr class="form-row">
+            <td><label for="codigo" class="form-label">Código:</label></td>
+            <td><input type="text" id="codigo" name="codigo" minlength="8" maxlength="8" autofocus required class="form-input"></td>
+        </tr>
+        <tr>
+            <td><label for="nombre" class="form-label">Nombre:</label></td>
+            <td><input type="text" id="nombre" name="nombre" minlength="3" maxlength="30" autofocus required class="form-input"></td>
+        </tr>
+        <tr>
+            <td><label for="poblacion" class="form-label">Población:</label></td>
+            <td><input type="text" id="poblacion" name="poblacion" minlength="1" maxlength="6" required autofocus class="form-input"></td>
+        </tr>
+        <tr>
+            <td><label for="estado" class="form-label">Estado:</label></td>
+            <td><input type="text" id="estado" name="estado" minlength="1" maxlength="1" required autofocus class="form-input"></td>
+        </tr>
+    </table>
+
+    <button type="submit" class="form-button">Guardar País</button>
+</form>
+
+{% endblock %}
+
